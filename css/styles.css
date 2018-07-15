@@ -103,8 +103,12 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
+#map-container {
+	width: 100%;
+	/* min-height: 400px; */
+}
 #map {
-  height: 400px;
+  min-height: 400px;
   width: 100%;
   background-color: #ccc;
 }
@@ -201,21 +205,21 @@ nav h1 a {
 .inside header {
   /* position: fixed; */
   /* top: 0; */
-  /* width: 100%; */
+  width: 100%;
   /* z-index: 1000; */
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  /* position: fixed; */
-  /* right: 0; */
-  /* top: 80px; */
-  width: 50%;
+  height: 100%;
+  /* position: fixed;
+  right: 0;
+  top: 80px; */
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
 }
 .inside #footer {
   /* bottom: 0; */
