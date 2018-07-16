@@ -263,15 +263,19 @@ nav h1 a {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 20px 0 0;
-  width: 50%;
+  /* width: 50%; */
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-items: center;
 }
+#restaurant-container {
+	width: 50%;
+}
 #reviews-container {
   padding: 30px 40px 80px;
 	order: 3;
+	width: 100%;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -279,21 +283,31 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+	width: 100%;
+	text-align: center;
 }
 #reviews-list {
   margin: 0;
   padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
-  /* display: block; */
+  border: 2px solid #f3f3f3;
+  /* display: inline-block; */
   list-style-type: none;
   margin: 0 0 30px;
   /* overflow: hidden; */
-  padding: 0 20px 20px;
+  padding: 0 10px 10px;
   /* position: relative; */
-  width: 85%;
+  /* width: 30%; */
+	min-width: 300px;
+	max-width: 550px;
+	vertical-align: text-top;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -301,3 +315,6 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+
+/* view for tablet and desktop */
+/* @media screen and (min-width:) */
