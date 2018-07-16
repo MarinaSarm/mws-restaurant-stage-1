@@ -251,7 +251,7 @@ nav h1 a {
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 300;
   letter-spacing: 10px;
   margin: 0 0 20px;
@@ -313,7 +313,7 @@ nav h1 a {
 }
 #reviews-list li p {
   margin: 0 0 10px;
-	font-size: 0.8em;
+	font-size: 1.2em;
 }
 #restaurant-hours td {
   color: #666;
@@ -327,6 +327,9 @@ nav h1 a {
     width: 50%;
 		padding: 10px 0;
   }
+	#restaurant-container {
+		align-content: flex-start;
+	}
   #reviews-list li {
     /* max-width: 90%; */
   }
@@ -357,7 +360,7 @@ nav h1 a {
 }
 @media screen and (min-width: 900px) {
   #reviews-list li {
-    /* max-width: 45%; */
+    max-width: 45%;
 		font-size: 1.2em;
   }
   /* #restaurant-hours td {
