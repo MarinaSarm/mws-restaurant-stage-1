@@ -34,7 +34,7 @@ self.addEventListener('activate', function(event) {
         cacheNames.filter(function(cacheName) {
           return cacheName.startsWith('restaurant-reviews-') && cacheName != staticCacheName;
         }).map(function(cacheName) {
-          return cache.delete(cacheName);
+          return caches.delete(cacheName);
         })
       );
     })
