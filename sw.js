@@ -1,6 +1,8 @@
+const staticCacheName = 'restaurant-reviews-v1';
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('restaurant-reviews-v1').then(function(cache) {
+    caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/',
         'index.html',
@@ -24,18 +26,26 @@ self.addEventListener('install', function(event) {
     })
   );
 });
-//
-// self.addEventListener('activate', function(event) {
-//   event.waitUntil(
-//     // TODO: remove the old cache
-//     caches.delete('wittr-static-v1')
-//   );
-// });
-//
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     caches.match(event.request).then(function(response) {
-//       return response || fetch(event.request);
-//     })
-//   );
-// });
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('restaurant-reviews-') && cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return cache.delete(cacheName);
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) return response;
+      return fetch(event.request);
+    })
+  );
+});
