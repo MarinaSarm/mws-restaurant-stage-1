@@ -1,3 +1,4 @@
+//code is followed to the Udacity's Service Worker course
 const staticCacheName = 'restaurant-reviews-v1';
 
 self.addEventListener('install', function(event) {
