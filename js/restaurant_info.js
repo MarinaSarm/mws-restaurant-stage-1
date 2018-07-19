@@ -183,8 +183,9 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
  * Get a parameter by name from page URL.
  */
 getParameterByName = (name, url) => {
-  if (!url)
+  if (!url) {
     url = window.location.href;
+  }
   name = name.replace(/[\[\]]/g, '\\$&');
   const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`),
     results = regex.exec(url);
@@ -193,13 +194,4 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-//service worker register
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function() {
-    console.log('Registration of service worker worked!');
-  }).catch(function() {
-    console.log('Registration of service worker failed!');
-  });
 }
