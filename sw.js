@@ -1,5 +1,5 @@
 //code is followed to the Udacity's Service Worker course
-const staticCacheName = 'restaurant-reviews-v1';
+const staticCacheName = '<restaurant-reviews-v1>';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -7,7 +7,16 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         '/',
         './index.html',
-        './restaurant.html',
+        '/restaurant.html?id=1',
+        '/restaurant.html?id=2',
+        '/restaurant.html?id=3',
+        '/restaurant.html?id=4',
+        '/restaurant.html?id=5',
+        '/restaurant.html?id=6',
+        '/restaurant.html?id=7',
+        '/restaurant.html?id=8',
+        '/restaurant.html?id=9',
+        '/restaurant.html?id=10',
         './css/styles.css',
         './js/main.js',
         './js/dbhelper.js',
